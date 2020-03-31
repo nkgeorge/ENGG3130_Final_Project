@@ -1,6 +1,5 @@
 from transformers import pipeline
 import os
-import matplotlib.pyplot as plt
 
 # This pipeline uses a fine tuned DistilBert model by default
 def average(lst):
@@ -11,7 +10,7 @@ def find_sent(file_name):
     positive = 0
     negative = 0
 
-    # file_name = 'data/' + file_name
+    file_name = 'data/' + file_name
 
     fp = open(file_name, "r")
     data = fp.read()
@@ -19,11 +18,10 @@ def find_sent(file_name):
     fp.close()
 
     # Use default (and most accurate model) for sentiment analysis
-    nlp = pipeline('sentiment-analysis')
+    nlp = pipeline('sentiment-analysis', device=0)
 
     for x in text:
         comment_sent = nlp(x)
-        print(comment_sent)
         score_list.append(comment_sent[0]['score'])
         if comment_sent[0]['label'] == 'POSITIVE':
             positive += 1
@@ -35,8 +33,8 @@ def find_sent(file_name):
     return positive / negative
 
 
-# game_sent = []
-# for file in os.listdir('data/'):
-#     game_sent.append(find_sent(file))
-#     print('Done:', file)
-print(find_sent('Man U vs Everton.txt'))
+game_sent = []
+# Enter in path to data folder
+for file in os.listdir('C:/Users/nkgeo/PycharmProjects/test2/data'):
+    game_sent.append(find_sent(file))
+    print('Done:', file)
