@@ -6,7 +6,7 @@ models = ['xlm-roberta-large',
           'albert-base-v2',
           'distilbert-base-cased-distilled-squad']
 
-text = []
+text = ['Hello this is a bad sentiment']
 
 # nlp = pipeline('sentiment-analysis', model='XLMRobertaForSequenceClassification', tokenizer='XLMRobertaTokenizer')
 # for x in text:
@@ -15,6 +15,7 @@ text = []
 
 # Perform Sentiment Analysis on text in 'text' with models in 'models
 for x in models:
-    nlp = pipeline('sentiment-analysis', model=x)   # Allocate a pipeline for sentiment-analysis
+
+    nlp = pipeline('sentiment-analysis', model=x, device=0)   # Allocate a pipeline for sentiment-analysis
     for y in text:
         print(x, ":", nlp(y))   #Perform Sentiment analysis and display results
