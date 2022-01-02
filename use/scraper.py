@@ -15,11 +15,11 @@ import json
 import datetime as dt
 
 ### Reddit API Credentials
-c_id = "WZN5PGD9OSwF-A"               # Personal Use Script (14 char)
-c_secret = "2Geib-DlQoKPztN3SdwbgznrkVE"           # Secret key (27 char)
+c_id = "********"               # Personal Use Script (14 char)
+c_secret = "********"           # Secret key (27 char)
 u_a = "Reddit Scraper"               # App name
-usrnm = "3130project"      # Reddit username
-passwd = "project3130"     # Reddit login password
+usrnm = "********"      # Reddit username
+passwd = "********"     # Reddit login password
 
 ### Get current date
 date = dt.datetime.now().strftime("%m-%d-%Y")
