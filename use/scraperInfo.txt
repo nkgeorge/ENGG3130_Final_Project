@@ -1,6 +1,0 @@
-TO RUN SCRAPER:
-
-Type: python scraper.py -c URL #ofcomments --json
-
-Example:
-python scraper.py -c https://www.reddit.com/r/soccer/comments/fkahcd/all_20_laliga_teams_have_put_forward_a_player_for/ 30 --json
